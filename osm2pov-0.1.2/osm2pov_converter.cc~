@@ -213,7 +213,7 @@ void Osm2PovConverter::drawTrees(const char *key, const char *value, const char 
 		if (str != NULL) height = readHeight(str);*/
 
 		//this->pov_writer->writeSprite((*it)->xy->x, (*it)->xy->y, tree_style_basic, (*it)->item_type);
-		this->pov_writer->writeSprite((*it)->getLon(), (*it)->getLat(), tree_style_basic, 2);
+		this->pov_writer->writeSprite((*it)->getLon(), (*it)->getLat(), tree_style_basic, rand() % 6 + 1);
 	}
 }
 

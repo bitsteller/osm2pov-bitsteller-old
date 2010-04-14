@@ -136,6 +136,7 @@ int main(int argc, const char **argv) {
 
 	osm2pov_converter.drawAreas("landuse", "cemetery", 0.012, "cemetery");
 
+	osm2pov_converter.drawBuildings("leisure", "stadium", 6.0, "building", "building_roof");
 	osm2pov_converter.drawBuildings("building", NULL, 4.5, "building", "building_roof");
 
 	osm2pov_converter.drawTowers("artwork_type", "obelisk", 4, 25, "man_made_tower"); //FIXME: for testing only
