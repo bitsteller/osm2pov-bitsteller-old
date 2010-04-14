@@ -145,6 +145,7 @@ int main(int argc, const char **argv) {
 	osm2pov_converter.drawBuildings("amenity", "tower", 25, "man_made_tower", "building_roof");
 	osm2pov_converter.drawWays("barrier", "wall", 0.3, 3, "wall");
 
+	osm2pov_converter.drawTrees("natural", "tree", "tree");
 	osm2pov_converter.drawForests("natural", "wood", 0.00011, "forest", "tree", 1, 1, 6);
 	osm2pov_converter.drawForests("landuse", "forest", 0.00011, "forest", "tree", 1, 1, 6);
 	osm2pov_converter.drawForests("landuse", "wood", 0.00011, "forest", "tree", 1, 1, 6);

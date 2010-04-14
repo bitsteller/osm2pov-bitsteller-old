@@ -193,6 +193,30 @@ void Osm2PovConverter::drawForests(const char *key, const char *value, double fl
 	}
 }
 
+void Osm2PovConverter::drawTrees(const char *key, const char *value, const char *tree_style_basic) {
+	list<const Node*> nodes;
+	this->primitives->getNodesWithAttribute(&nodes, key, value);
+	for (list<const Node*>::iterator it = nodes.begin(); it != nodes.end(); it++) {
+		{
+			stringstream s;
+			s << "Node " << (*it)->getId();
+			this->pov_writer->writeComment(s.str().c_str());
+		}
+		
+		//double x = this->primitives->convertLonToCoord((*it)->getLon());
+		//double y = this->primitives->convertLatToCoord((*it)->getLat());
+
+		//this->point_field.addPoint((*it)->getLon(), (*it)->getLat(), primitives->metres2unit(width+1.5)*2);
+
+		/*double height = default_height;
+		const char *str = (*it)->getAttribute("height");
+		if (str != NULL) height = readHeight(str);*/
+
+		//this->pov_writer->writeSprite((*it)->xy->x, (*it)->xy->y, tree_style_basic, (*it)->item_type);
+		this->pov_writer->writeSprite((*it)->getLon(), (*it)->getLat(), tree_style_basic, rand() % 6 + 1);
+	}
+}
+
 void Osm2PovConverter::drawBuildingWalls(const vector<const XY*> *points, double height, const char *style) {
 	bool first = true;
 	double x_before, y_before;
