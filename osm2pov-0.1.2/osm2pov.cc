@@ -105,6 +105,8 @@ int main(int argc, const char **argv) {
 	Osm2PovConverter osm2pov_converter(&primitives, &pov_writer);
 
 	//generating objects
+	osm2pov_converter.drawWaysWithBorder("railway", "rail", 3.0, 0.09, "railway", 15, "railway_border");
+	osm2pov_converter.drawWaysWithBorder("railway", "abandoned", 1.8, 0.045, "railway", 15, "railway_border");
 	osm2pov_converter.drawWaysWithBorder("highway", "motorway", 10, 0.06, "highway", 10, "highway_secondary_border");
 	osm2pov_converter.drawWaysWithBorder("highway", "motorway_link", 5, 0.06, "highway", 10, "highway_border");
 	osm2pov_converter.drawWaysWithBorder("highway", "primary", 8, 0.06, "highway", 10, "highway_secondary_border");
@@ -125,9 +127,9 @@ int main(int argc, const char **argv) {
 	osm2pov_converter.drawWays("highway", "steps", 1.2, 0.03, "footway");
 	osm2pov_converter.drawWays("highway", "cycleway", 1.5, 0.03, "footway");
 	osm2pov_converter.drawWays("highway", "path", 1, 0.015, "path");
-	osm2pov_converter.drawWays("railway", "rail", 2, 0.09, "railway");
 
-	osm2pov_converter.drawWays("railway", "abandoned", 1.8, 0.045, "railway");
+
+	
 	osm2pov_converter.drawAreas("leisure", "playground", 0.013, "playground");
 	osm2pov_converter.drawAreas("leisure", "pitch", 0.013, "playground");
 
@@ -146,7 +148,8 @@ int main(int argc, const char **argv) {
 	osm2pov_converter.drawBuildings("amenity", "tower", 25, "man_made_tower", "building_roof");
 	osm2pov_converter.drawWays("barrier", "wall", 0.3, 3, "wall");
 
-	osm2pov_converter.drawTrees("natural", "tree", "tree");
+	osm2pov_converter.drawObjects("amenity", "post_box", "postbox", 0.18, 1, 1);
+	osm2pov_converter.drawObjects("natural", "tree", "tree", 0.2, 1, 6);
 	osm2pov_converter.drawForests("natural", "wood", 0.00011, "forest", "tree", 1, 1, 6);
 	osm2pov_converter.drawForests("landuse", "forest", 0.00011, "forest", "tree", 1, 1, 6);
 	osm2pov_converter.drawForests("landuse", "wood", 0.00011, "forest", "tree", 1, 1, 6);
