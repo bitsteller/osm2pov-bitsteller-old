@@ -184,7 +184,7 @@ void Osm2PovConverter::drawForests(const char *key, const char *value, double fl
 		vector<PointFieldItem*> trees;
 		(*it)->computeRegularInsidePoints(&trees, &this->point_field, tree_style_min, tree_style_max);
 		for (vector<PointFieldItem*>::iterator it2 = trees.begin(); it2 != trees.end(); it2++) {
-			this->pov_writer->writeSprite((*it2)->xy->x, (*it2)->xy->y, tree_style_basic, (*it2)->item_type);
+			this->pov_writer->writeSprite((*it2)->xy->x, (*it2)->xy->y, tree_style_basic, (*it2)->item_type,0.3);
 			delete (*it2)->xy;
 			delete *it2;
 		}
@@ -213,7 +213,7 @@ void Osm2PovConverter::drawTrees(const char *key, const char *value, const char 
 		if (str != NULL) height = readHeight(str);*/
 
 		//this->pov_writer->writeSprite((*it)->xy->x, (*it)->xy->y, tree_style_basic, (*it)->item_type);
-		this->pov_writer->writeSprite((*it)->getLon(), (*it)->getLat(), tree_style_basic, rand() % 6 + 1);
+		this->pov_writer->writeSprite((*it)->getLon(), (*it)->getLat(), tree_style_basic, rand() % 6 + 1, 0.2);
 	}
 }
 

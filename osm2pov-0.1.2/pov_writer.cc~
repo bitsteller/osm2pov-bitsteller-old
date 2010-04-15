@@ -112,12 +112,12 @@ void PovWriter::writeCylinder(double x, double y, double radius, double height, 
 	this->fs << "}" << endl;
 }
 
-void PovWriter::writeSprite(double x, double y, const char *sprite_style, size_t sprite_style_number) {
+void PovWriter::writeSprite(double x, double y, const char *sprite_style, size_t sprite_style_number, double scale) {
 	this->fs << "plane { ";
 	this->fs << "z, 0 hollow on clipped_by { box { <0,0,-1>, <1,1,1> } } ";
 	this->fs << "texture { " << sprite_style << sprite_style_number << " } ";
 	this->fs << "translate <-0.5,0,0> ";
-	this->fs << "scale 0.3 ";		//TODO modificable scale
+	this->fs << "scale " << scale;		//TODO modificable scale
 	this->fs << "translate <" << (this->convertLonToCoord(x)) << ", 0, " << this->convertLatToCoord(y) << ">";
 	this->fs << "}" << endl;
 }

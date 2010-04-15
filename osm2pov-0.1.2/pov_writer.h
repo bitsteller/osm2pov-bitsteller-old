@@ -29,7 +29,7 @@ class PovWriter {
 	void writePolygon(const Polygon3D *polygon, const char *style);
 	void writeBox(double x, double y, double width, double height, double length, double angle, const char *style);
 	void writeCylinder(double x, double y, double radius, double height, const char *style);
-	void writeSprite(double x, double y, const char *sprite_style, size_t sprite_style_number);
+	void writeSprite(double x, double y, const char *sprite_style, size_t sprite_style_number, double scale);
 };
 
 
