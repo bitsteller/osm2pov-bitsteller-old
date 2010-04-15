@@ -105,7 +105,7 @@ int main(int argc, const char **argv) {
 	Osm2PovConverter osm2pov_converter(&primitives, &pov_writer);
 
 	//generating objects
-	osm2pov_converter.drawWaysWithBorder("railway", "rail", 3.0, 0.09, "railway", 15, "railway_border");
+	osm2pov_converter.drawWaysWithBorder("railway", "rail", 2.6, 0.09, "railway", 15, "railway_border");
 	osm2pov_converter.drawWaysWithBorder("railway", "abandoned", 1.8, 0.045, "railway", 15, "railway_border");
 	osm2pov_converter.drawWaysWithBorder("highway", "motorway", 10, 0.06, "highway", 10, "highway_secondary_border");
 	osm2pov_converter.drawWaysWithBorder("highway", "motorway_link", 5, 0.06, "highway", 10, "highway_border");
@@ -137,6 +137,7 @@ int main(int argc, const char **argv) {
 	osm2pov_converter.drawWays("aeroway", "taxiway", 7, 0.07, "highway");
 
 	osm2pov_converter.drawAreas("landuse", "cemetery", 0.012, "cemetery");
+	osm2pov_converter.drawAreas("natural", "beach", 0.012, "beach");
 
 	osm2pov_converter.drawBuildings("leisure", "stadium", 6.0, "building", "building_roof");
 	osm2pov_converter.drawBuildings("building", NULL, 4.5, "building", "building_roof");
