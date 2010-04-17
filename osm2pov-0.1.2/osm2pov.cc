@@ -108,6 +108,7 @@ int main(int argc, const char **argv) {
 	//osm2pov_converter.drawWaysWithBorder("railway", "rail", 2.6, 0.09, "railway", 15, "railway_border");
 	osm2pov_converter.drawWays("railway", "rail", 4.5, 0.09, "railway");
 	osm2pov_converter.drawWays("railway", "abandoned", 2.0, 0.09, "railway");
+	osm2pov_converter.drawWays("railway", "tram", 2.0, 0.12, "railway2");
 	//osm2pov_converter.drawWaysWithBorder("railway", "abandoned", 1.8, 0.045, "railway", 15, "railway_border");
 	osm2pov_converter.drawWaysWithBorder("highway", "motorway", 10, 0.06, "highway", 10, "highway_secondary_border");
 	osm2pov_converter.drawWaysWithBorder("highway", "motorway_link", 5, 0.06, "highway", 10, "highway_border");
